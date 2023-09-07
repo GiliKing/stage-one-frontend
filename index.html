@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* first centralize the container */
+        .container {
+            width: 80%;
+            margin: 0px auto;
+        }
+
+        /* central the card */
+        .card {
+            width: 50%;
+            margin: 100px auto;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 16px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .click {
+            cursor: pointer;
+            width: 30%;
+            margin: 0px auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 5px;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Centralized container-->
+    <div class="container">
+
+        <!-- Details about christian-->
+        <div class="card">
+            <!-- Image display-->
+            <img src="gili.jpeg" alt="Christian_Gili" data-testid="slackDisplayImage">
+
+            <div class="details">
+                <p data-testid="slackUserName">Slack Name: Christian_Gili</p>
+                <p id="day" data-testid="currentDaayOfTheWeek"></p>
+                <p id="time" data-testid="currentUTCTime">Current Time: Christian_Gili</p>
+                <p data-testid="myTrack">Track: Frontend</p>
+                <p class="click" onclick="go_to_github()" data-testid="githubURL">Github</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        window.addEventListener('load', () => {
+
+            get_only_day();
+
+            get_only_time();
+            
+        })
+
+        function get_only_day(){
+
+            // get the current day
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            let day = new Date();
+
+            // display it on the screen
+            document.getElementById('day').innerText = `Current Day: ${days[day.getDay()]}`;
+
+        }
+
+        function get_only_time() {
+            //display time 
+            document.getElementById('time').innerText = `Current Time: ${new Date().getTime()}`
+        }
+
+        function go_to_github() {
+
+            window.location.href = "https://github.com/giliking/"
+        }
+        
+    </script>
+</body>
+</html>
