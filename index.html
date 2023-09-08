@@ -47,10 +47,10 @@
             <img src="gili.jpeg" alt="Christian_Gili" data-testid="slackDisplayImage">
 
             <div class="details">
-                <p data-testid="slackUserName">Slack Name: Christian_Gili</p>
-                <p id="day" data-testid="currentDaayOfTheWeek"></p>
-                <p id="time" data-testid="currentUTCTime">Current Time: Christian_Gili</p>
-                <p data-testid="myTrack">Track: Frontend</p>
+                <p data-testid="slackUserName">Christian_Gili</p>
+                <p id="day" data-testid="currentDayOfTheWeek"></p>
+                <p id="time" data-testid="currentUTCTime"></p>
+                <p data-testid="myTrack">Frontend</p>
                 <p class="click" onclick="go_to_github()" data-testid="githubURL">Github</p>
             </div>
         </div>
@@ -74,13 +74,13 @@
             let day = new Date();
 
             // display it on the screen
-            document.getElementById('day').innerText = `Current Day: ${days[day.getDay()]}`;
+            document.getElementById('day').innerText = `${days[day.getDay()]}`;
 
         }
 
         function get_only_time() {
             //display time 
-            document.getElementById('time').innerText = `Current Time: ${new Date().getTime()}`
+            document.getElementById('time').innerText = `${new Date().getTime()}`
         }
 
         function go_to_github() {
