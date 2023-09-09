@@ -62,7 +62,7 @@
 
             get_only_day();
 
-            get_only_time();
+            setInterval(get_only_time, 1000);
             
         })
 
@@ -82,6 +82,7 @@
             //display time 
             document.getElementById('time').innerText = `${new Date().getTime()}`
         }
+
 
         function go_to_github() {
 
