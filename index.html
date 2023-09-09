@@ -24,15 +24,18 @@
             font-family: 'Times New Roman', Times, serif;
         }
 
-        .click {
+        a {
             cursor: pointer;
             width: 30%;
-            margin: 0px auto;
+            margin: 20px auto;
             padding-top: 10px;
             padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
             border-radius: 5px;
             background-color: blue;
             color: white;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -48,16 +51,17 @@
 
             <div class="details">
                 <p data-testid="slackUserName">Christian_Gili</p>
-                <p id="day" data-testid="currentDayOfTheWeek"></p>
-                <p id="time" data-testid="currentUTCTime"></p>
+                <p data-testid="currentDayOfTheWeek"></p>
+                <p data-testid="currentUTCTime"></p>
                 <p data-testid="myTrack">Frontend</p>
-                <p class="click" onclick="go_to_github()" data-testid="githubURL">Github</p>
+                <a href="https://github.com/GiliKing/stage-one-frontend/" data-testid="githubURL">Github</a>
             </div>
         </div>
     </div>
 
     <script>
 
+        // if the page has not load do nothing.
         window.addEventListener('load', () => {
 
             get_only_day();
@@ -74,20 +78,15 @@
             let day = new Date();
 
             // display it on the screen
-            document.getElementById('day').innerText = `${days[day.getDay()]}`;
+            document.getElementsByTagName('p')[1].innerText = `${days[day.getDay()]}`;
 
         }
 
         function get_only_time() {
             //display time 
-            document.getElementById('time').innerText = `${new Date().getTime()}`
+            document.getElementsByTagName('p')[2].innerText = `${new Date().getTime()}`
         }
 
-
-        function go_to_github() {
-
-            window.location.href = "https://github.com/GiliKing/stage-one-frontend/";
-        }
         
     </script>
 </body>
